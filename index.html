@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ShopApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS 快速入门</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/demoApp.js"></script>
+    <script src="js/dataService.js"></script>
+    <script src="js/demoController.js"></script>
+</head>
+<body ng-controller="DemoController as demo">
+    <div>
+        <label>{{demo.item1.name}}</label>
+        <label>{{demo.item1.price}}</label>
+        <label>{{demo.item1.quantity}}</label>
+        <button ng-click="demo.add()"> + </button>
+        <button ng-click="demo.subtract()"> - </button>
+    </div>
+    <div><label>Total: </label>{{demo.data.totalAmount}}</div>
+</body>
+</html>

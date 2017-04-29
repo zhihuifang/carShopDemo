@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ShopApp">
+<head>
+	<title>我的购物车</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/goodscar.css">
+	<script src="js/angular.min.js"></script>
+	<script src="js/demoApp.js"></script>
+	<script src="js/dataService.js"></script>
+	<script src="js/demoController.js"></script>
+</head>
+
+	<body ng-controller="DemoController as demo">
+		<!--头部信息 start-->
+		<div class="head_info">
+			<a href="#" class="head_info_return"><img src="images/head_returnIcon.png" /></a>
+			<span>购物车</span>
+			<a href="#" class="head_info_other">完成</a>
+		</div>
+		<!--头部信息 end-->
+
+		<!--内容信息 start-->
+		<div class="main_con">
+			<div class="main_con_allchoose">
+				<span class="circle"></span>全选 <a href="###"><img src="images/goods_del.png" /></a>
+			</div>
+			<div class="main_con_goods">
+				<ul>
+					<li ng-repeat="item in demo.items"><!--ng-repeat="item1 in data"-->
+                        <span class="circle"></span>
+						<img src="images/goodscar_pic1.png">
+						<div class="del_con">
+							<p class="title"><a href=""><font>产品名称</font>{{item.name}}</a></p>
+							<p class="money"><font>￥{{item.price}}</font><b>库存100件</b>
+								<input class="add" ng-click="demo.add($index)" type="button" value="+" />
+								<input class="num" type="text" value="{{item.quantity}}" />
+								<input class="del"  ng-click="demo.subtract($index)" type="button" value="-" />
+							</p>
+						</div>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+		<!--内容信息 end-->
+		
+		<!--结算信息 start-->
+		<div class="settlement">
+			<div class="settlement_left">
+				<font class="zongji">总计：</font><font class="money">￥{{demo.data.totalAmount}}</font><br />
+				（共0件，不包含运费）
+			</div>
+			<div class="settlement_right">
+				<input type="button" value="去结算" />
+			</div>
+		</div>
+		<!--结算信息 end-->
+
+		<!--goodscar.css 修改样式 .no_goods{display: block}-->
+		
+		<!--无商品页面 start-->
+		<div class="no_goods">
+			<img src="images/no_goods_ico.png" />
+			<p>购物车里没有东西哦~<br />快去商城逛逛吧！</p>
+			<a href="">即刻添置</a>
+		</div>
+		<!--无商品页面 end-->
+		
+	</body>
+
+</html>
