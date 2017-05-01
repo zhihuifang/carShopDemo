@@ -32,8 +32,8 @@
                         <span class="circle"></span>
 						<img src="images/goodscar_pic1.png">
 						<div class="del_con">
-							<p class="title"><a href=""><font>产品名称</font>{{item.name}}</a></p>
-							<p class="money"><font>￥{{item.price}}</font><b>库存100件</b>
+							<p class="title"><a href=""><font>{{item.name}}</font>{{item.describe}}</a></p>
+							<p class="money"><font>￥{{item.price}}</font><b>库存{{item.inventory}}件</b>
 								<input class="add" ng-click="demo.add($index)" type="button" value="+" />
 								<input class="num" type="text" value="{{item.quantity}}" />
 								<input class="del"  ng-click="demo.subtract($index)" type="button" value="-" />
@@ -50,7 +50,7 @@
 		<div class="settlement">
 			<div class="settlement_left">
 				<font class="zongji">总计：</font><font class="money">￥{{demo.data.totalAmount}}</font><br />
-				（共0件，不包含运费）
+				（共{{demo.data.totalCount}}件，不包含运费）
 			</div>
 			<div class="settlement_right">
 				<input type="button" value="去结算" />

@@ -74,6 +74,11 @@ a{ text-decoration:none;color:#030000;}
 	height: 100px;
 	float: left;
 }
+.main_con_goods ul li .money img {
+	width: 25px;
+	height: 25px;
+	float: right;
+}
 .main_con_goods ul li div{
 /*	float: right;*/
 }
@@ -128,7 +133,7 @@ a{ text-decoration:none;color:#030000;}
 	z-index: 1;
 }
 .main_con_goods ul li div .money b{
-	float: right;
+	/*float: right;*/
 	font-size: 14px;
 	font-weight: 100;
 	margin-top: 5px;

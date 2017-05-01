@@ -1,21 +1,57 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="ShopApp">
 <head>
-    <meta charset="UTF-8">
-    <title>Angular JS 快速入门</title>
+    <title>我的购物车</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/goodscar.css">
     <script src="js/angular.min.js"></script>
     <script src="js/demoApp.js"></script>
     <script src="js/dataService.js"></script>
     <script src="js/demoController.js"></script>
 </head>
+
 <body ng-controller="DemoController as demo">
-    <div>
-        <label>{{demo.item1.name}}</label>
-        <label>{{demo.item1.price}}</label>
-        <label>{{demo.item1.quantity}}</label>
-        <button ng-click="demo.add()"> + </button>
-        <button ng-click="demo.subtract()"> - </button>
+<!--头部信息 start-->
+<div class="head_info">
+    <a href="#" class="head_info_return"><img src="images/head_returnIcon.png" /></a>
+    <span>商品详情</span>
+</div>
+<!--头部信息 end-->
+
+<!--内容信息 start-->
+<div class="main_con">
+    <div class="main_con_goods">
+        <ul>
+            <li ng-repeat="item in demo.items"><!--ng-repeat="item1 in data"-->
+                <span class="circle" style="visibility: hidden;margin: 0px 0px;"></span>
+                <img src="images/goodscar_pic1.png">
+                <div class="del_con">
+                    <p class="title"><a href=""><font>{{item.name}}</font>{{item.describe}}</a></p>
+                    <p class="money"><font>￥{{item.price}}</font><b>库存{{item.inventory}}件</b>
+                       <img ng-click="demo.add($index)" src="images/shopcar.png">
+                    </p>
+                </div>
+            </li>
+        </ul>
+
     </div>
-    <div><label>Total: </label>{{demo.data.totalAmount}}</div>
+</div>
+<!--内容信息 end-->
+
+<!--结算信息 start-->
+<div class="settlement">
+    <div class="settlement_left">
+        <font class="zongji">总计：</font><font class="money">￥{{demo.data.totalAmount}}</font><br />
+        （共{{demo.data.totalCount}}件，不包含运费）
+    </div>
+    <div class="settlement_right">
+        <a href="carshop.html"><input type="button" value="去购物车结算" /></a>
+    </div>
+</div>
+<!--结算信息 end-->
+
 </body>
+
 </html>
