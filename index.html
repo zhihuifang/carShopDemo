@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="ShopApp">
 <head>
-    <title>我的购物车</title>
+    <title>商品列表</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -9,7 +9,7 @@
     <script src="js/angular.min.js"></script>
     <script src="js/demoApp.js"></script>
     <script src="js/dataService.js"></script>
-    <script src="js/demoController.js"></script>
+    <script src="js/goodsController.js"></script>
 </head>
 
 <body ng-controller="DemoController as demo">
@@ -24,13 +24,13 @@
 <div class="main_con">
     <div class="main_con_goods">
         <ul>
-            <li ng-repeat="item in demo.items"><!--ng-repeat="item1 in data"-->
+            <li ng-repeat="item in demo.goods"><!--ng-repeat="item1 in data"-->
                 <span class="circle" style="visibility: hidden;margin: 0px 0px;"></span>
                 <img src="images/goodscar_pic1.png">
                 <div class="del_con">
                     <p class="title"><a href=""><font>{{item.name}}</font>{{item.describe}}</a></p>
                     <p class="money"><font>￥{{item.price}}</font><b>库存{{item.inventory}}件</b>
-                       <img ng-click="demo.add($index)" src="images/shopcar.png">
+                       <span ng-click="demo.select($index)"><img ng-click="demo.add($index)" src="images/shopcar.png"></span>
                     </p>
                 </div>
             </li>

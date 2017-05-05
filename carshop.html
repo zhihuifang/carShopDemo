@@ -9,10 +9,10 @@
 	<script src="js/angular.min.js"></script>
 	<script src="js/demoApp.js"></script>
 	<script src="js/dataService.js"></script>
-	<script src="js/demoController.js"></script>
+	<script src="js/carController.js"></script>
 </head>
 
-	<body ng-controller="DemoController as demo">
+	<body ng-controller="carController as demo">
 		<!--头部信息 start-->
 		<div class="head_info">
 			<a href="#" class="head_info_return"><img src="images/head_returnIcon.png" /></a>
@@ -28,7 +28,7 @@
 			</div>
 			<div class="main_con_goods">
 				<ul>
-					<li ng-repeat="item in demo.items"><!--ng-repeat="item1 in data"-->
+					<li ng-repeat="item in demo.newGood"><!--ng-repeat="item1 in data"-->
                         <span class="circle"></span>
 						<img src="images/goodscar_pic1.png">
 						<div class="del_con">
@@ -53,7 +53,7 @@
 				（共{{demo.data.totalCount}}件，不包含运费）
 			</div>
 			<div class="settlement_right">
-				<input type="button" value="去结算" />
+				<input type="button" value="下订单" />
 			</div>
 		</div>
 		<!--结算信息 end-->
