@@ -1,0 +1,54 @@
+<!--头部信息 start-->
+<div class="head_info">
+    <a href="#" class="head_info_return"><img src="images/head_returnIcon.png" /></a>
+    <span>购物车</span>
+    <a href="#" class="head_info_other">完成</a>
+</div>
+<!--头部信息 end-->
+
+<!--内容信息 start-->
+<div class="main_con">
+    <div class="main_con_allchoose">
+        <span class="circle"></span>全选 <a href="###"><img src="images/goods_del.png" /></a>
+    </div>
+    <div class="main_con_goods">
+        <ul>
+            <li ng-repeat="item in cart.newGood"><!--ng-repeat="item1 in data"-->
+                <span class="circle"></span>
+                <img src="images/goodscar_pic1.png">
+                <div class="del_con">
+                    <p class="title"><a href=""><font>{{item.name}}</font>{{item.describe}}</a></p>
+                    <p class="money"><font>￥{{item.price}}</font><b>库存{{item.inventory}}件</b>
+                        <input class="add" ng-click="cart.add($index)" type="button" value="+" />
+                        <input class="num" type="text" value="{{item.quantity}}" />
+                        <input class="del"  ng-click="cart.subtract($index)" type="button" value="-" />
+                    </p>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</div>
+<!--内容信息 end-->
+
+<!--结算信息 start-->
+<div class="settlement">
+    <div class="settlement_left">
+        <font class="zongji">总计：</font><font class="money">￥{{cart.data.totalAmount}}</font><br />
+        （共{{cart.data.totalCount}}件，不包含运费）
+    </div>
+    <div class="settlement_right">
+        <input type="button" value="下订单" />
+    </div>
+</div>
+<!--结算信息 end-->
+
+<!--goodscar.css 修改样式 .no_goods{display: block}-->
+
+<!--无商品页面 start-->
+<div class="no_goods">
+    <img src="images/no_goods_ico.png" />
+    <p>购物车里没有东西哦~<br />快去商城逛逛吧！</p>
+    <a href="">即刻添置</a>
+</div>
+<!--无商品页面 end-->
