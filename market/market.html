@@ -1,11 +1,11 @@
 <div ng-controller="goodsController as market">
     <div class="head_info">
         <a href="#" class="head_info_return"><img src="images/head_returnIcon.png" /></a>
-        <span>ÉÌÆ·ÏêÇé</span>
+        <span>å•†å“è¯¦æƒ…</span>
     </div>
-    <!--Í·²¿ĞÅÏ¢ end-->
+    <!--å¤´éƒ¨ä¿¡æ¯-->
 
-    <!--ÄÚÈİĞÅÏ¢ start-->
+    <!--å†…å®¹ä¿¡æ¯ start-->
     <div class="main_con">
         <div class="main_con_goods">
             <ul>
@@ -14,7 +14,7 @@
                     <img src="images/goodscar_pic1.png">
                     <div class="del_con">
                         <p class="title"><a href=""><font>{{item.name}}</font>{{item.describe}}</a></p>
-                        <p class="money"><font>£¤{{item.price}}</font><b>¿â´æ{{item.inventory}}¼ş</b>
+                        <p class="money"><font>ï¿¥{{item.price}}</font><b>åº“å­˜{{item.inventory}}ä»¶</b>
                             <span ng-click="market.select($index)"><img ng-click="market.add($index)" src="images/shopcar.png"></span>
                         </p>
                     </div>
@@ -23,17 +23,17 @@
 
         </div>
     </div>
-    <!--ÄÚÈİĞÅÏ¢ end-->
+    <!--å†…å®¹ä¿¡æ¯ end-->
 
-    <!--½áËãĞÅÏ¢ start-->
+    <!--ç»“ç®—ä¿¡æ¯ start-->
     <div class="settlement">
         <div class="settlement_left">
-            <font class="zongji">×Ü¼Æ£º</font><font class="money">£¤{{market.data.totalAmount}}</font><br />
-            £¨¹²{{market.data.totalCount}}¼ş£¬²»°üº¬ÔË·Ñ£©
+            <font class="zongji">æ€»è®¡</font><font class="money">ï¿¥{{market.data.totalAmount}}</font><br />
+            å…±{{market.data.totalCount}}ä»¶ï¼Œä¸åŒ…å«è¿è´¹
         </div>
         <div class="settlement_right">
-            <a ng-click="market.gotoCart()"><input type="button" value="È¥¹ºÎï³µ½áËã" /></a>
+            <a ng-click="market.gotoCart()"><input type="button" value="å»è´­ç‰©è½¦ç»“ç®—" /></a>
         </div>
     </div>
-    <!--½áËãĞÅÏ¢ end-->
+    <!--ç»“ç®—ä¿¡æ¯ end-->
 </div>
