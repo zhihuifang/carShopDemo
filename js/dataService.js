@@ -24,7 +24,8 @@ angular.module("ShopApp")
             self.selectGoods.push(selectGood);
         }
         // 对外接口：数据
-
+        self.goods = goods;
+        self.selectGoods = selectGoods;
         self.totalCount = 0;
         self.totalAmount = 0; //这个既是内部使用，也是外部使用，因为他不是地址引用的对象， 只是简单的值变量
 
