@@ -4,4 +4,6 @@ angular.module("ShopApp")
         var self = this;
         self.data = DataService;
         self.goods = DataService.goods;
+        self.addGood = DataService.addGood;
+        self.addInventory = DataService.addInventory;
 });

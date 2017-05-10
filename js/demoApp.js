@@ -12,5 +12,5 @@ angular.module("ShopApp", ['ui.router'])
                 templateUrl: 'cart/cart.html'
             });
 
-        $urlRouterProvider.otherwise('market');//д╛хо
+        $urlRouterProvider.otherwise('market');
     });
