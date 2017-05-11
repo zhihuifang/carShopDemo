@@ -3,6 +3,10 @@
 *,body.div,a,ul,li,p,span{margin:0;padding:0;list-style:none;font-family:"微软雅黑";}
 a{ text-decoration:none;color:#030000;}
 
+body
+{
+	background: #f4f4f5;
+}
 /*-------------------------------------------------首页--------------------------------*/
 .head_info {
 	clear: both;
