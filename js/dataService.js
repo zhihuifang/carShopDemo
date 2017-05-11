@@ -2,6 +2,15 @@ angular.module("ShopApp")
     .service('DataService', function ($timeout) {
         // 内部变量
         var self = this;
+        // 对外接口：处理函数
+        self.totalCount = 0;
+        self.totalAmount = 0; //这个既是内部使用，也是外部使用，因为他不是地址引用的对象， 只是简单的值变量
+        self.addGood = addGood;
+        self.addInventory = addInventory;
+        //购物车接口
+        self.add = add;
+        self.subtract = subtract;
+        self.select = select;
         //*.................商品详情service................*/
         var goods = [
             {name: "海尔电视", price: 2000, quantity: 0, sum: 0, inventory: 100, describe: "海尔电视是一款高清便宜性价比高的电视"},
@@ -11,21 +20,6 @@ angular.module("ShopApp")
 
         //购物获取数组
         var selectGoods = [];
-
-        // 对外接口：数据
-        self.goods = goods;
-        self.selectGoods = selectGoods;
-        self.totalCount = 0;
-        self.totalAmount = 0; //这个既是内部使用，也是外部使用，因为他不是地址引用的对象， 只是简单的值变量
-
-        // 对外接口：处理函数
-        self.addGood = addGood;
-        self.addInventory = addInventory;
-        //购物车接口
-        self.add = add;
-        self.subtract = subtract;
-        self.select = select;
-
         function select(index) {
             var selected = self.goods[index];
             var selectGood = {
@@ -38,7 +32,9 @@ angular.module("ShopApp")
             };
             self.selectGoods.push(selectGood);
         }
-
+        // 对外接口：数据
+        self.goods = goods;
+        self.selectGoods = selectGoods;
 
         // 内部具体实现
         //详情增减数量
@@ -50,8 +46,9 @@ angular.module("ShopApp")
 
         function addInventory(index) {
             self.goods[index].inventory--;
-            $timeout(updateGood);//调用函数
-            $timeout(function() {//使用timeout调用函数
+            $timeout(updateGood);
+
+            $timeout(function () {
                 select(index);
             });
         }

@@ -1,5 +1,5 @@
 angular.module("ShopApp")
-.controller('allController', function ($state,DataService) {
+.controller('cartController', function ($state,DataService) {
     // 内部变量
         var self = this;
         self.data = DataService;
