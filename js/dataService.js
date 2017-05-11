@@ -11,18 +11,7 @@ angular.module("ShopApp")
 
         //购物获取数组
         var selectGoods = [];
-        function select(index) {
-            var selected = self.goods[index];
-            var selectGood = {
-                name: selected.name,
-                price: selected.price,
-                inventory:selected.inventory,
-                describe:selected.describe,
-                sum: 0,
-                quantity: 1
-            };
-            self.selectGoods.push(selectGood);
-        }
+
         // 对外接口：数据
         self.goods = goods;
         self.selectGoods = selectGoods;
@@ -37,6 +26,20 @@ angular.module("ShopApp")
         self.subtract = subtract;
         self.select = select;
 
+        function select(index) {
+            var selected = self.goods[index];
+            var selectGood = {
+                name: selected.name,
+                price: selected.price,
+                inventory:selected.inventory,
+                describe:selected.describe,
+                sum: 0,
+                quantity: 1
+            };
+            self.selectGoods.push(selectGood);
+        }
+
+
         // 内部具体实现
         //详情增减数量
         function addGood(index) {
@@ -44,10 +47,13 @@ angular.module("ShopApp")
             $timeout(updateGood);
         }
         //购物车加减
+
         function addInventory(index) {
             self.goods[index].inventory--;
-            $timeout(updateGood);
-            $timeout(select);
+            $timeout(updateGood);//调用函数
+            $timeout(function() {//使用timeout调用函数
+                select(index);
+            });
         }
         function add(index) {
             self.selectGoods[index].quantity++;
