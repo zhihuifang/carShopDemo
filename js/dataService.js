@@ -70,7 +70,7 @@ angular.module("ShopApp")
                 n = self.selectGoods.length,
                 item;
 
-            self.carTotalAmount = 0;
+            self.carTotalAmount;
             self.carTotalCount = 0;
             for (i = 0; i < n; i++) {
                 item = self.selectGoods[i];

@@ -1,15 +1,15 @@
-<!--Í·²¿ĞÅÏ¢ start-->
+<!--å¤´éƒ¨ä¿¡æ¯ start-->
 <div class="head_info">
     <a href="#" class="head_info_return"><img src="images/head_returnIcon.png" /></a>
-    <span>¹ºÎï³µ</span>
-    <a href="#" class="head_info_other">Íê³É</a>
+    <span>è´­ç‰©è½¦</span>
+    <a href="#" class="head_info_other">å®Œæˆ</a>
 </div>
-<!--Í·²¿ĞÅÏ¢ end-->
+<!--Í·å¤´éƒ¨ä¿¡æ¯end-->
 
-<!--ÄÚÈİĞÅÏ¢ start-->
+<!--å†…å®¹ä¿¡æ¯ start-->
 <div class="main_con">
     <div class="main_con_allchoose">
-        <span class="circle"></span>È«Ñ¡ <a href="###"><img src="images/goods_del.png" /></a>
+        <span class="circle"></span>å…¨é€‰ <a href="###"><img src="images/goods_del.png" /></a>
     </div>
     <div class="main_con_goods">
         <ul>
@@ -18,10 +18,10 @@
                 <img src="images/goodscar_pic1.png">
                 <div class="del_con">
                     <p class="title"><a href=""><font>{{item.name}}</font>{{item.describe}}</a></p>
-                    <p class="money"><font>£¤{{item.price}}</font><b>¿â´æ{{item.inventory}}¼ş</b>
-                        <input class="add" ng-click="cart.add($index)" type="button" value="+" />
-                        <input class="num" type="text" value="{{item.quantity}}" />
-                        <input class="del"  ng-click="cart.subtract($index)" type="button" value="-" />
+                    <p class="money"><font>ï¿¥{{item.price}}</font>
+                        <input class="add" ng-click="cart.add($index)" type="button" value="+" >
+                        <input class="num" type="text" min="1" value="{{item.quantity}}" >
+                        <input class="del"  ng-click="cart.subtract($index)" type="button" value="-" >
                     </p>
                 </div>
             </li>
@@ -29,26 +29,28 @@
 
     </div>
 </div>
-<!--ÄÚÈİĞÅÏ¢ end-->
+<!--å†…å®¹ä¿¡æ¯ end-->
 
-<!--½áËãĞÅÏ¢ start-->
+<!--ç»“ç®—ä¿¡æ¯ start-->
 <div class="settlement">
     <div class="settlement_left">
-        <font class="zongji">×Ü¼Æ£º</font><font class="money">£¤{{cart.data.carTotalAmount}}</font><br />
-        £¨¹²{{cart.data.carTotalCount}}¼ş£¬²»°üº¬ÔË·Ñ£©
+        <font class="zongji">æ€»è®¡ï¼š</font><font class="money">ï¿¥{{cart.data.carTotalAmount}}</font><br />
+        å…±{{cart.data.carTotalCount}}ä»¶ï¼Œä¸åŒ…å«è¿è´¹
     </div>
     <div class="settlement_right">
-        <input type="button" value="ÏÂ¶©µ¥" />
+        <input type="button" value="ä¸‹è®¢å•" />
     </div>
 </div>
-<!--½áËãĞÅÏ¢ end-->
+<!--ç»“ç®—ä¿¡æ¯ end-->
 
-<!--goodscar.css ĞŞ¸ÄÑùÊ½ .no_goods{display: block}-->
+<!--goodscar.css ï¿½Ş¸ï¿½ï¿½ï¿½Ê½ .no_goods{display: block}-->
 
-<!--ÎŞÉÌÆ·Ò³Ãæ start-->
+<!--goodscar.css ä¿®æ”¹æ ·å¼ .no_goods{display: block}-->
+
+<!--æ— å•†å“é¡µé¢ start-->
 <div class="no_goods">
     <img src="images/no_goods_ico.png" />
-    <p>¹ºÎï³µÀïÃ»ÓĞ¶«Î÷Å¶~<br />¿ìÈ¥ÉÌ³Ç¹ä¹ä°É£¡</p>
-    <a href="">¼´¿ÌÌíÖÃ</a>
+    <p>è´­ç‰©è½¦é‡Œæ²¡æœ‰ä¸œè¥¿å“¦~<br />å¿«å»å•†åŸé€›é€›å§ï¼</p>
+    <a href="">å³åˆ»æ·»ç½®</a>
 </div>
-<!--ÎŞÉÌÆ·Ò³Ãæ end-->
+<!--æ— å•†å“é¡µé¢ end-->
