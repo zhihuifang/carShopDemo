@@ -5,8 +5,6 @@ angular.module("ShopApp")
         // 对外接口：处理函数
         self.totalCount = 0;
         self.totalAmount = 0; //这个既是内部使用，也是外部使用，因为他不是地址引用的对象， 只是简单的值变量
-        self.carTotalAmount = 0; //这个既是内部使用，也是外部使用，因为他不是地址引用的对象， 只是简单的值变量
-        self.carTotalCount = 0; //这个既是内部使用，也是外部使用，因为他不是地址引用的对象， 只是简单的值变量
         self.addGood = addGood;
         self.addInventory = addInventory;
         //购物车接口
@@ -33,6 +31,11 @@ angular.module("ShopApp")
                 quantity: 1
             };
             self.selectGoods.push(selectGood);
+            for(var i=0;i<selectGoods.length;i++){
+                if (selectGoods[i]==selectGoods[i+1]){
+                    alert('111')
+                }
+            }
         }
         // 对外接口：数据
         self.goods = goods;
@@ -69,14 +72,13 @@ angular.module("ShopApp")
             var i,
                 n = self.selectGoods.length,
                 item;
-
-            self.carTotalAmount;
-            self.carTotalCount = 0;
+                self.totalAmount = 0;
+                self.totalCount = 0;
             for (i = 0; i < n; i++) {
                 item = self.selectGoods[i];
                 item.sum = item.price * item.quantity;
-                self.carTotalAmount += item.sum;
-                self.carTotalCount += item.quantity;
+                self.totalAmount += item.sum;
+                self.totalCount += item.quantity;
             }
         }
         $timeout(update);
@@ -86,7 +88,6 @@ angular.module("ShopApp")
             var i,
                 n = self.goods.length,
                 item;
-
             self.totalAmount = 0;
             self.totalCount = 0;
             for (i = 0; i < n; i++) {
