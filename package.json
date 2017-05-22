@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/zhihuifang/carShopDemo/issues"
   },
-  "homepage": "https://github.com/zhihuifang/carShopDemo#readme"
+  "homepage": "https://github.com/zhihuifang/carShopDemo#readme",
+  "dependencies": {
+    "gulp": "^3.8.11"
+  }
 }
