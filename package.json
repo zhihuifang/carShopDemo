@@ -1,0 +1,22 @@
+{
+  "name": "carshop",
+  "version": "1.0.0",
+  "description": "this is carshop",
+  "main": "index.html",
+  "scripts": {
+    "test": "index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhihuifang/carShopDemo.git"
+  },
+  "keywords": [
+    "carshop"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhihuifang/carShopDemo/issues"
+  },
+  "homepage": "https://github.com/zhihuifang/carShopDemo#readme"
+}
