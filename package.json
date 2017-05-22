@@ -21,6 +21,7 @@
   "homepage": "https://github.com/zhihuifang/carShopDemo#readme",
   "dependencies": {
     "blink-diff": "^1.0.12",
+    "crypto": "0.0.3",
     "gulp": "^3.8.11",
     "run-sequence": "^1.1.3"
   }
