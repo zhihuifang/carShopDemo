@@ -1,5 +1,7 @@
 angular.module("ShopApp")
-.controller('cartController', function ($state,DataService) {
+.controller('cartController',cartController);
+    DemoController.$inject = ['$state', 'DataService'];
+    function cartController ($state,DataService) {
     // 内部变量
         var self = this;
         self.data = DataService;
@@ -15,4 +17,4 @@ angular.module("ShopApp")
         function gotoCart() {
                 $state.go('cart');
         }
-});
+};

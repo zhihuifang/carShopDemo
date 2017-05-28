@@ -1,5 +1,7 @@
 angular.module("ShopApp")
-    .service('DataService', function ($timeout) {
+    .service('DataService',DataService);
+    DataService.$inject = ['$timeout'];
+    function DataService($timeout) {
         // 内部变量
         var self = this;
         // 对外接口：处理函数
@@ -100,4 +102,4 @@ angular.module("ShopApp")
         $timeout(updateGood);
 
 
-    });
+    };

@@ -1,5 +1,7 @@
 angular.module("ShopApp", ['ui.router'])
-    .config(function ($compileProvider, $stateProvider, $urlRouterProvider, $locationProvider) {
+    .config(onConfig);
+    onConfig.$inject = ['$compileProvider', '$stateProvider', '$urlRouterProvider', '$locationProvider'];
+    function onConfig ($compileProvider, $stateProvider, $urlRouterProvider, $locationProvider) {
         $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension):/);
         $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|local|data|file|filesystem):/);
         $stateProvider
@@ -13,4 +15,4 @@ angular.module("ShopApp", ['ui.router'])
             });
 
         $urlRouterProvider.otherwise('market');
-    });
+    };
